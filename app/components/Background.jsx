@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 
-export default function Background({ smokeScale, leaving }) {
+export default function Background({
+  smokeScale = 1,
+  leaving = false,
+}) {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
 
@@ -12,17 +15,14 @@ export default function Background({ smokeScale, leaving }) {
         muted
         loop
         playsInline
-      animate={{
-  scale: leaving
-    ? smokeScale
-    : [1, 1.08, 1],
-}}
-
-transition={{
-  duration: leaving ? 1 : 8,
-  repeat: leaving ? 0 : Infinity,
-  ease: "easeInOut",
-}}
+        animate={{
+          scale: leaving ? smokeScale : [1, 1.08, 1],
+        }}
+        transition={{
+          duration: leaving ? 1 : 8,
+          repeat: leaving ? 0 : Infinity,
+          ease: "easeInOut",
+        }}
         className="absolute inset-0 w-full h-full object-cover opacity-75 scale-125 brightness-125 contrast-125"
       >
         <source src="/smoke.mp4" type="video/mp4" />
@@ -74,12 +74,8 @@ transition={{
         className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-red-600/30 blur-[220px]"
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/20"></div>
-
-      {/* Cinematic Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
-
+      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
     </div>
   );
 }
