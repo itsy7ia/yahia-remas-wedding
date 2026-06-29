@@ -10,8 +10,10 @@ const cormorant = Cormorant_Garamond({
 
 export default function WeddingDetails() {
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden px-6">
-
+    <section
+  id="details"
+  className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden px-6"
+>
       {/* Background Glow */}
       <motion.div
         animate={{
