@@ -13,15 +13,7 @@ export default function TransitionOverlay({ show }) {
           transition={{ duration: 0.9, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden"
         >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-90 brightness-150 scale-150"
-          >
-            <source src="/smoke.mp4" type="video/mp4" />
-          </video>
+          <div className="absolute inset-0 bg-black/60" />
 
           <div className="absolute inset-0 bg-black/75" />
 

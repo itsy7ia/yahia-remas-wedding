@@ -145,8 +145,9 @@ export default function Hero() {
     }, 700);
 
     setTimeout(() => {
-      setTransition(false);
-    }, 1400);
+  setTransition(false);
+  setLeaving(false);
+}, 1400);
   }}
   className="
     group
